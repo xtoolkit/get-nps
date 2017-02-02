@@ -8,8 +8,8 @@ virtualenv:
 before_install:
   - npm install -g cost-of-modules
 install:
-  - git clone https://github.com/xtoolkit/Micon/
-  - cd Micon
+  - git clone https://github.com/atom/atom/
+  - cd atom
 script:
  - npm install
  - cost-of-modules --no-install --include-dev
