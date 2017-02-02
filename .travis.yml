@@ -8,8 +8,8 @@ virtualenv:
 before_install:
   - npm install -g cost-of-modules
 install:
-  - git clone https://github.com/winjs/winjs/
-  - cd winjs
+  - git clone https://github.com/xtoolkit/Micon/
+  - cd Micon
 script:
  - du -hs ./
  - npm install
