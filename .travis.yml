@@ -11,5 +11,7 @@ install:
   - git clone https://github.com/xtoolkit/Micon/
   - cd Micon
 script:
+ - du -hs ./
  - npm install
+ - du -hs ./node_modules/
  - cost-of-modules --no-install --include-dev
