@@ -1,0 +1,14 @@
+language: node_js
+dist: trusty
+sudo: required
+node_js:
+  - "node"
+virtualenv:
+  system_site_packages: true
+before_install:
+  - npm install -g cost-of-modules
+install:
+  - git clone https://github.com/xtoolkit/Micon/
+script:
+ - npm install
+ - cost-of-modules --no-install --include-dev
