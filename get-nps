@@ -13,8 +13,8 @@ du -hs ./
 
 # download tgz and calc
 mkdir ozi
-npm ls --json=true | grep -Po '(?<="resolved": ")[^"]*' | tee ozi/list
-cd mkdir
+npm ls --json=true | grep -Po '(?<="resolved": ")[^"]*' | tee ozi/list > /dev/null
+cd ozi
 wget -i list
 rm list
 echo "all tgz orginal size:"
