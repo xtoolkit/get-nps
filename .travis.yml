@@ -5,7 +5,7 @@ node_js:
   - "node"
 virtualenv:
   system_site_packages: true
-install:
+script:
  - git clone https://github.com/xtoolkit/Micon/
  - cd Micon
  - du -hs ./
