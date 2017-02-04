@@ -1,33 +1,35 @@
 #!/bin/bash
 
 # git size in disk
-echo "\n###################################"
+echo -e "\n###################################\n"
 echo " git size in disk:"
 du -hs ./
-echo "###################################\n"
+
+# git source size in disk
+echo -e "\n###################################\n"
+sudo rm -R .git
+echo " source size in disk:"
+du -hs ./
 
 # install npm package
-echo "\n###################################"
+echo -e "\n###################################\n"
 echo " instaling npm packages"
 npm install &> /dev/null
-echo "###################################\n"
 
-# git size in disk after npm install
-echo "\n###################################"
-echo " git size in disk after npm install:"
+# source size in disk after npm install
+echo -e "\n###################################\n"
+echo " source size in disk after npm install:"
 du -hs ./
-echo "###################################\n"
 
 # download tgz and calc
 mkdir ozi
 npm ls --json=true | grep -Po '(?<="resolved": ")[^"]*' | tee ozi/list > /dev/null
 cd ozi
-echo "\n###################################"
+echo -e "\n###################################\n"
 echo " Downloading tgz"
 wget -i list &> /dev/null
-echo "###################################\n"
 rm list
-echo "\n###################################"
+echo -e "\n###################################\n"
 echo " all tgz orginal size:"
 du -h --apparent-size ./
-echo "###################################\n"
+echo -e "\n###################################\n"
