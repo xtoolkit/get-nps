@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# git size in disk
+echo "git size in disk:"
+du -hs ./
+
+# install npm package
+npm install > /dev/null
+
+# git size in disk after npm install
+echo "git size in disk after npm install:"
+du -hs ./
+
+# download tgz and calc
+mkdir ozi
+npm ls --json=true | grep -Po '(?<="resolved": ")[^"]*' | tee ozi/list
+cd mkdir
+wget -i list
+rm list
+echo "all tgz orginal size:"
+du -h --apparent-size ./
