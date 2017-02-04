@@ -5,15 +5,8 @@ node_js:
   - "node"
 virtualenv:
   system_site_packages: true
-script:
+install:
  - git clone https://github.com/xtoolkit/Micon/
  - cd Micon
- - du -hs ./
- - npm install
- - du -hs ./
- - mkdir ozi
- - npm ls --json=true | grep -Po '(?<="resolved": ")[^"]*' | tee ozi/list
- - cd mkdir
- - wget -i list
- - rm list
- - du -h --apparent-size ./
+script:
+ - bash get-nps
