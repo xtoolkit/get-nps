@@ -5,13 +5,15 @@ node_js:
   - "node"
 virtualenv:
   system_site_packages: true
-before_install:
-  - npm install -g cost-of-modules
 install:
-  - git clone https://github.com/xtoolkit/Micon/
-  - cd Micon
-script:
+ - git clone https://github.com/xtoolkit/Micon/
+ - cd Micon
  - du -hs ./
  - npm install
- - du -hs ./node_modules/
- - cost-of-modules --no-install --include-dev
+ - du -hs ./
+ - mkdir ozi
+ - npm ls --json=true | grep -Po '(?<="resolved": ")[^"]*' | tee ozi/list
+ - cd mkdir
+ - wget -i list
+ - rm list
+ - du -h --apparent-size ./
