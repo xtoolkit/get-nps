@@ -9,4 +9,5 @@ install:
  - git clone https://github.com/xtoolkit/Micon/
  - cd Micon
 script:
+ - mv ../get-nps ./
  - bash get-nps
