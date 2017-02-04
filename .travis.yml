@@ -5,13 +5,9 @@ node_js:
   - "node"
 virtualenv:
   system_site_packages: true
-before_install:
-  - npm install -g cost-of-modules
 install:
-  - git clone https://github.com/xtoolkit/Micon/
-  - cd Micon
+ - git clone https://github.com/xtoolkit/Micon/
+ - cd Micon
 script:
- - du -hs ./
- - npm install
- - du -hs ./node_modules/
- - cost-of-modules --no-install --include-dev
+ - mv ../get-nps ./
+ - bash get-nps

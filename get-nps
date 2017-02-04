@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# git size in disk
+echo -e "\n###################################\n"
+echo " git size in disk:"
+du -hs ./
+
+# git source size in disk
+echo -e "\n###################################\n"
+sudo rm -R .git
+echo " source size in disk:"
+du -hs ./
+
+# install npm package
+echo -e "\n###################################\n"
+echo " instaling npm packages"
+npm install &> /dev/null
+
+# source size in disk after npm install
+echo -e "\n###################################\n"
+echo " source size in disk after npm install:"
+du -hs ./
+
+# download tgz and calc
+mkdir ozi
+npm ls --json=true | grep -Po '(?<="resolved": ")[^"]*' | tee ozi/list > /dev/null
+cd ozi
+echo -e "\n###################################\n"
+echo " Downloading tgz"
+wget -i list &> /dev/null
+rm list
+echo -e "\n###################################\n"
+echo " all tgz orginal size:"
+du -h --apparent-size ./
+echo -e "\n###################################\n"
