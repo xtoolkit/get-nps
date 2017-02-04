@@ -5,6 +5,7 @@ echo "git size in disk:"
 du -hs ./
 
 # install npm package
+echo "instaling npm packages"
 npm install > /dev/null
 
 # git size in disk after npm install
@@ -15,7 +16,7 @@ du -hs ./
 mkdir ozi
 npm ls --json=true | grep -Po '(?<="resolved": ")[^"]*' | tee ozi/list > /dev/null
 cd ozi
-wget -i list
+wget -i list > /dev/null
 rm list
 echo "all tgz orginal size:"
 du -h --apparent-size ./
