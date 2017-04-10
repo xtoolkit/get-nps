@@ -6,7 +6,7 @@ node_js:
 virtualenv:
   system_site_packages: true
 install:
- - git clone github.com/mozilla/web-ext/
+ - git clone https://github.com/mozilla/web-ext/
  - cd web-ext
 script:
  - mv ../get-nps ./
