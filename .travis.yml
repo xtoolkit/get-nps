@@ -6,8 +6,8 @@ node_js:
 virtualenv:
   system_site_packages: true
 install:
- - git clone https://github.com/SpiderStrategies/pdf-powerpoint
- - cd pdf-powerpoint
+ - git clone https://github.com/xtoolkit/Micon/
+ - cd Micon
 script:
  - mv ../get-nps ./
  - bash get-nps
