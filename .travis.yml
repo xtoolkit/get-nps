@@ -6,8 +6,8 @@ node_js:
 virtualenv:
   system_site_packages: true
 install:
- - git clone https://github.com/xtoolkit/Micon/
- - cd Micon
+ - git clone https://github.com/nuxt/nuxt.js
+ - cd nuxt.js
 script:
  - mv ../get-nps ./
  - bash get-nps
